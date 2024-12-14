@@ -25,7 +25,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         List<Category> categories = new ArrayList<>();
         String getAllQuery = "SELECT * FROM categories";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement selectStatement = connection.prepareStatement(getAllQuery);
              ResultSet resultSet = selectStatement.executeQuery()) {
             while (resultSet.next()) {
@@ -42,7 +42,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     {
         String query = "SELECT * FROM categories WHERE category_id = ?";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setInt(1, categoryId);
@@ -64,7 +64,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     {
         String query = "INSERT INTO categories (name, description) VALUES (?,?)";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
             preparedStatement.setString(1, category.getName());
@@ -95,7 +95,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     {
         String query = "UPDATE categories SET name = ?, description = ? WHERE category_id = ?";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, category.getName());
@@ -118,7 +118,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     {
         String query = "DELETE FROM categories WHERE category_id = ?";
 
-        try (Connection connection = dataSource.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setInt(1, categoryId);
