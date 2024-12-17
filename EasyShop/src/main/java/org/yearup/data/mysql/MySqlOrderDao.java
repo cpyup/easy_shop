@@ -3,7 +3,6 @@ package org.yearup.data.mysql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.yearup.data.OrderDao;
-import org.yearup.data.UserDao;
 import org.yearup.models.Order;
 
 import javax.sql.DataSource;
