@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import org.yearup.models.Category;
 import org.yearup.models.Product;
 import org.yearup.data.ProductDao;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @CrossOrigin
 public class ProductsController
 {
-    private ProductDao productDao;
+    private final ProductDao productDao;
 
     @Autowired
     public ProductsController(ProductDao productDao)
@@ -47,7 +46,7 @@ public class ProductsController
     @PreAuthorize("permitAll()")
     public Product getById(@PathVariable int id )
     {
-        Product product = null;
+        Product product;
         try
         {
             product = productDao.getById(id);

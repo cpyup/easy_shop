@@ -5,15 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import org.yearup.data.ProductDao;
 import org.yearup.data.ShoppingCartDao;
 import org.yearup.data.UserDao;
-import org.yearup.models.Product;
 import org.yearup.models.ShoppingCart;
 import org.yearup.models.ShoppingCartItem;
 import org.yearup.models.User;
 
-import java.math.BigDecimal;
 import java.security.Principal;
 
 // convert this class to a REST controller
@@ -25,15 +22,13 @@ import java.security.Principal;
 public class ShoppingCartController
 {
     // a shopping cart requires
-    private ShoppingCartDao shoppingCartDao;
-    private UserDao userDao;
-    private ProductDao productDao;
+    private final ShoppingCartDao shoppingCartDao;
+    private final UserDao userDao;
 
     @Autowired
-    public ShoppingCartController(ShoppingCartDao shoppingCartDao, UserDao userDao, ProductDao productDao) {
+    public ShoppingCartController(ShoppingCartDao shoppingCartDao, UserDao userDao) {
         this.shoppingCartDao = shoppingCartDao;
         this.userDao = userDao;
-        this.productDao = productDao;
     }
 
     // each method in this controller requires a Principal object as a parameter
@@ -89,7 +84,7 @@ public class ShoppingCartController
             if (user == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
             }
-            System.out.println("Updating product in cart: User ID: " + user.getId() + ", Product ID: " + productId + ", Quantity: " + item.getQuantity());
+
             shoppingCartDao.updateCartProduct(user.getId(), productId, item.getQuantity());
             return shoppingCartDao.getByUserId(user.getId());
         } catch (Exception e) {

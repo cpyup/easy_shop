@@ -17,8 +17,8 @@ import java.security.Principal;
 @RequestMapping("/profile")
 @PreAuthorize("isAuthenticated()")
 public class ProfileController {
-    private ProfileDao profileDao;
-    private UserDao userDao;
+    private final ProfileDao profileDao;
+    private final UserDao userDao;
 
     @Autowired
     public ProfileController(ProfileDao profileDao, UserDao userDao) {

@@ -23,11 +23,11 @@ import java.util.List;
 @RequestMapping("/orders")
 @PreAuthorize("isAuthenticated()")
 public class OrdersController {
-    private OrderLineItemDao orderLineItemDao;
-    private ShoppingCartDao shoppingCartDao;
-    private UserDao userDao;
-    private ProfileDao profileDao;
-    private OrderDao orderDao;
+    private final OrderLineItemDao orderLineItemDao;
+    private final ShoppingCartDao shoppingCartDao;
+    private final UserDao userDao;
+    private final ProfileDao profileDao;
+    private final OrderDao orderDao;
 
     @Autowired
     public OrdersController(OrderLineItemDao orderLineItemDao, ShoppingCartDao shoppingCartDao, UserDao userDao, ProfileDao profileDao, OrderDao orderDao) {
@@ -66,8 +66,8 @@ public class OrdersController {
 
             List<ShoppingCartItem> cartItems = new ArrayList<>(cart.getItems().values());
 
-            for(int i = 0; i < cartItems.size(); i++){
-                OrderLineItem orderItem = convertToLineItem(cartItems.get(i),order);
+            for (ShoppingCartItem cartItem : cartItems) {
+                OrderLineItem orderItem = convertToLineItem(cartItem, order);
                 orderItem = orderLineItemDao.create(orderItem);
                 order.add(orderItem);
             }
@@ -83,7 +83,6 @@ public class OrdersController {
 
 
     private OrderLineItem convertToLineItem(ShoppingCartItem cartItem, Order order){
-         OrderLineItem lineItem = new OrderLineItem(order.getOrderId(), cartItem.getProductId(), cartItem.getProduct().getPrice(),cartItem.getQuantity(),BigDecimal.ZERO);
-        return lineItem;
+        return new OrderLineItem(order.getOrderId(), cartItem.getProductId(), cartItem.getProduct().getPrice(),cartItem.getQuantity(),BigDecimal.ZERO);
     }
 }
