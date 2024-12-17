@@ -89,7 +89,7 @@ public class MySqlCartDao extends MySqlDaoBase implements ShoppingCartDao {
             statement.setInt(1,userId);
 
             int rows = statement.executeUpdate();
-            if(rows==0)throw new SQLException("Empty cart failed");
+            //if(rows==0)throw new SQLException("Empty cart failed");
 
         }catch(SQLException e){
             System.err.println("SQL Error: " + e.getMessage());
