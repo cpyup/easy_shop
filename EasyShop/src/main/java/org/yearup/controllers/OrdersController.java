@@ -14,7 +14,9 @@ import org.yearup.models.*;
 import java.math.BigDecimal;
 import java.security.Principal;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,12 +50,12 @@ public class OrdersController {
             }
 
             Profile currentProfile = profileDao.getByUserId(user.getId());
-            LocalDate currentDate = LocalDate.now();
+            LocalDateTime currentDateTime = LocalDateTime.now();
 
             Order order = new Order()
             {{
                 setUserId(user.getId());
-                setDate(Date.valueOf(currentDate));
+                setDate(Timestamp.valueOf(currentDateTime));
                 setAddress(currentProfile.getAddress());
                 setCity(currentProfile.getCity());
                 setState(currentProfile.getState());

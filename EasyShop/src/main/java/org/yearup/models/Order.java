@@ -3,6 +3,7 @@ package org.yearup.models;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +12,7 @@ public class Order {
     private ArrayList<OrderLineItem> lineItems = new ArrayList<>();
     private int orderId;
     private int userId;
-    private Date date;
+    private Timestamp date;
     private String address;
     private String city;
     private String state;
@@ -48,11 +49,11 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 
