@@ -43,6 +43,20 @@ TODO:
 
 ![Postman Pass](https://github.com/cpyup/easy_shop/blob/main/screenshots/postman_passing.png?raw=true)
 
+### Frontend Application Home Page
+
+#### Logged Out
+
+![Logged Out](https://github.com/cpyup/easy_shop/blob/main/screenshots/main.png?raw=true)
+
+#### Logged In As User
+
+![User](https://github.com/cpyup/easy_shop/blob/main/screenshots/main_user.png?raw=true)
+
+#### Logged In As Administrator
+
+![Admin](https://github.com/cpyup/easy_shop/blob/main/screenshots/main_admin.png?raw=true)
+
 ## Project Highlights
 
 ### Bonus Implementations
