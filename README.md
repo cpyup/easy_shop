@@ -6,16 +6,40 @@ The easy shop project is a full-stack application simulating an e-commerce site.
 
 This repo houses the Java backend application, and the sql script required to create the initial database. The frontend code to interact with this Java backend is located [here.](https://github.com/cpyup/easy_shop_frontend)
 
+Originally, I had planned to revamp the stores theme after completing my primary objectives (adjusting the default categories and product names/descriptions, populating with new images, etc.). After looking at the amount of data in the db, I very quickly backtracked on that.
+
+After seeing the features present in the webpage, I decided to reorient, and work to integrate as much of the functionality present in the backend as I possibly could with the remaining time until presentation day. I am happy to say that I was able to integrate all of the features that we worked on, as well as a few other updates.
+
 
 ## User Stories
 
-TODO:
+> As a user, I would like the ability to search for products based on the category type
+>
+> As an administrator, I need to be able to make modifications to the product categories (i.e. update/delete existing, add new)
+>
+> As a user, I would like to be able to search for products based on a price range.
+>
+> As an administrator, I need to be able to make updates to products so that I can accurately represent our stores inventory by making changes when necessary.
+>
+> As a user, I need to be able to add products to my shopping cart so that I can move to complete my transaction.
+>
+> As a user, I want to be able to view my user profile, so that I can verify my information is up to date.
+>
+> As a user, I need to be able to purchase the items in my cart, because that is how stores function.
+>
+> As an administrator, I need purchases to automatically update the current product inventory, so that our listings remain accurate.
 
 ## Setup Instructions
 
 To run this project, we need to take a few different steps.
 
+### Database Setup (MySQL)
+
+TODO
+
 ### Backend Setup (IntelliJ IDE)
+
+TODO
 
 ### Frontend (Postman)
 
@@ -27,11 +51,17 @@ TODO
 
 ## Technologies Used
 
-TODO:
+TODO
 
 ## Additional Tools
 
-TODO:
+[Animated Text Generator](https://www.textstudio.com/text-animation-generator)
+
+[Text To ASCII](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+
+[Bootswatch](https://bootswatch.com/slate/#top)
+
+**INSPECT ELEMENT**
 
 ## Screenshots
 
@@ -77,7 +107,7 @@ TODO:
 
 > After completing the main project and its optional tasks, my next goal became implementing all of the functionality present in the backend somewhere in the front.
 >
-> While I did not manage to get EVERYTHING, I feel that I was able to address the most important bits. While I was hoping to also make some large overhauls to the page design, I did make a *few* modifications.
+> While I did not manage to get *everything*, I feel that I was able to address the most important bits. While I was hoping to also make some large overhauls to the page design, I did make a *few* modifications.
 
 #### QOL Improvements
 
@@ -87,9 +117,13 @@ TODO:
 
 #### Visual Overhaul
 
-> Swapped bootswatch theming to something easier on the eyes, made minor css adjustments to specific elements,
+> Swapped bootswatch theming to something easier on the eyes, made minor css adjustments to specific elements.
 >
-> Adjustments to visual styling of the header and a few other elements,
+> Adjustments to visual styling of the header and a few other elements.
+>
+> Updated logo, favicon, and page title.
+>
+> Adjusted cart icon display elements.
 
 #### Shopping Cart
 
