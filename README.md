@@ -125,16 +125,23 @@ TODO
 >
 > Adjusted cart icon display elements.
 
+#### Register User Form
+
+> Implemented nav option when viewing the page and not signed out that opens a basic user registration form, then redirects to login after valid submission.
+
 #### Shopping Cart
 
-> Shopping cart methods adjusted, checkout now looks for and deducts from current product stock before processing.
+> (Backend) shopping cart methods adjusted, checkout now looks for and deducts from current product stock before processing.
+>
+> Implemented cart checkout functionality.
+>
+> Added new display for viewing an empty shopping cart.
 
 #### Admin Options
 
 > The website Administrator has access to an additional dropdown menu in the navbar. From here, the administrator is able to add new products, and add/remove/delete categories (provided they are not referenced elsewhere, this feature is primarily for deleting newly created categories not in use)
 >
 > Additionally, when the website admin is viewing the products page, every product now has an additional button. This will take the administrator to a new page that allows them to either delete or edit that product.
-
 
 ## Future Work
 
@@ -178,6 +185,16 @@ TODO
 >
 > Obviously, that would have ended up being way more work than my single week could handle, so that was cut.
 
+#### Mock Payment Submission
+
+> This would have been implemented primarily on the backend, and require a user to submit a valid card number when checking out.
+>
+> The feature would have just validated the checksum with an implementation of the [Luhn Algorithm,](https://en.wikipedia.org/wiki/Luhn_algorithm) not actually process any charges. 
+>
+>While this would have been a lot of fun, sadly, it as well was cut for time.
+
 ## Resources
 
-TODO:
+[W3Schools](https://www.w3schools.com/)
+
+[Google](https://www.google.com/)
