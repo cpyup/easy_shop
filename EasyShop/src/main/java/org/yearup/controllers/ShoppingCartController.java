@@ -72,6 +72,8 @@ public class ShoppingCartController
         }
     }
 
+    //TODO: Add method to remove single item from cart
+
 
     // add a PUT method to update an existing product in the cart - the url should be
     // https://localhost:8080/cart/products/15 (15 is the productId to be updated)

@@ -24,6 +24,8 @@ public class ProductsController
         this.productDao = productDao;
     }
 
+    //TODO: Add param for searching product names
+
     @GetMapping()
     @PreAuthorize("permitAll()")
     public List<Product> search(@RequestParam(name="cat", required = false) Integer categoryId,
