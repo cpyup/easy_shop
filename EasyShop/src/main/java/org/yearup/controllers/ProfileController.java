@@ -40,7 +40,7 @@ public class ProfileController {
         }catch(Exception e){
             System.err.println("SQL Error: " + e.getMessage());
             e.printStackTrace();
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while retrieving the profile. Please try again later.");
         }
     }
 
@@ -54,11 +54,11 @@ public class ProfileController {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
             }
             int userId = user.getId();
-            profileDao.update(userId,profile);
+            profileDao.update(userId, profile);
         }catch(Exception e){
             System.err.println("SQL Error: " + e.getMessage());
             e.printStackTrace();
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while updating the profile. Please try again later.");
         }
     }
 }

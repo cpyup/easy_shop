@@ -24,15 +24,13 @@ public class ProductsController
         this.productDao = productDao;
     }
 
-    //TODO: Add param for searching product names
-
     @GetMapping()
     @PreAuthorize("permitAll()")
     public List<Product> search(@RequestParam(name="cat", required = false) Integer categoryId,
                                 @RequestParam(name="minPrice", required = false) BigDecimal minPrice,
                                 @RequestParam(name="maxPrice", required = false) BigDecimal maxPrice,
                                 @RequestParam(name="color", required = false) String color
-                                )
+    )
     {
         try
         {
@@ -40,7 +38,7 @@ public class ProductsController
         }
         catch(Exception ex)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while searching for products. Please try again later.");
         }
     }
 
@@ -55,12 +53,12 @@ public class ProductsController
         }
         catch(Exception ex)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while retrieving the product. Please try again later.");
         }
 
         if(product == null)
         {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with ID " + id + " not found.");
         }
 
         return product;
@@ -76,7 +74,7 @@ public class ProductsController
         }
         catch(Exception ex)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while creating the product. Please try again later.");
         }
     }
 
@@ -86,11 +84,11 @@ public class ProductsController
     {
         try
         {
-            productDao.update(id,product);
+            productDao.update(id, product);
         }
         catch(Exception ex)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while updating the product. Please try again later.");
         }
     }
 
@@ -103,13 +101,13 @@ public class ProductsController
             var product = productDao.getById(id);
 
             if(product == null)
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with ID " + id + " not found.");
 
             productDao.delete(id);
         }
         catch(Exception ex)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while deleting the product. Please try again later.");
         }
     }
 }

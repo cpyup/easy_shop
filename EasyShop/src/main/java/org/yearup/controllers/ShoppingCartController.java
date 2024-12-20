@@ -49,7 +49,7 @@ public class ShoppingCartController
         }
         catch(Exception e)
         {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while retrieving the cart. Please try again later.");
         }
     }
 
@@ -68,7 +68,7 @@ public class ShoppingCartController
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while adding the product to the cart. Please try again later.", e);
         }
     }
 
@@ -91,7 +91,7 @@ public class ShoppingCartController
             return shoppingCartDao.getByUserId(user.getId());
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while updating the product in the cart. Please try again later.", e);
         }
     }
 
@@ -111,7 +111,7 @@ public class ShoppingCartController
             return shoppingCartDao.getByUserId(user.getId());
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An error occurred while emptying the cart. Please try again later.", e);
         }
     }
 
