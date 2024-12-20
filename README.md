@@ -1,10 +1,16 @@
 # Easy Shop (Backend)
 
-## Project Summary
+## Project Information
+
+### Summary
 
 The easy shop project is a full-stack application simulating an e-commerce site. The original project was unfinished and contained multiple bugs. I was tasked with completing the backend methods and locating existing bugs.
 
-This repo houses the Java backend application, and the sql script required to create the initial database. The frontend code to interact with this Java backend is located [here.](https://github.com/cpyup/easy_shop_frontend)
+This repo houses the Java backend application, and the SQL script required to create the initial database. The frontend code to interact with this Java backend is located [here.](https://github.com/cpyup/easy_shop_frontend) 
+
+Alternatively, [Postman](https://www.postman.com/) can be used to send requests directly to the API in lieu of the frontend application.
+
+### Forward
 
 Originally, I had planned to revamp the stores theme after completing my primary objectives (adjusting the default categories and product names/descriptions, populating with new images, etc.). After looking at the amount of data in the db, I very quickly backtracked on that.
 
@@ -12,6 +18,8 @@ After seeing the features present in the webpage, I decided to reorient, and wor
 
 
 ## User Stories
+
+User stories that were utilized during this project:
 
 > As a user, I would like the ability to search for products based on the category type
 >
@@ -33,35 +41,57 @@ After seeing the features present in the webpage, I decided to reorient, and wor
 
 To run this project, we need to take a few different steps.
 
+### Prerequisites
+
+- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
+- Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
+- MySQL Workbench needs to be installed/configured, and can be downloaded [here.](https://www.mysql.com/downloads/) 
+- [Postman](https://www.postman.com/) or the [frontend application](https://github.com/cpyup/easy_shop_frontend), for interacting with the API
+
 ### Database Setup (MySQL)
 
-TODO
+1. Connect to local instance
+2. Open SQL script from this repo
+3. Run the script, refresh schemas
 
 ### Backend Setup (IntelliJ IDE)
 
-TODO
+1. Open IntelliJ IDEA.
+2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
+3. After the project opens, wait for IntelliJ to index the files and set up the project.
+4. Find the main class with the `public static void main(String[] args)` method.
+5. Right-click on the file and select 'Run 'EasyShopApplication.main()'' to start the application.
 
-### Frontend (Postman)
 
-TODO
+### Frontend Setup (IntelliJ IDE - Second Instance)
 
-### Frontend (Webpage)
-
-TODO
+1. Open IntelliJ IDEA.
+2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
+3. After the project opens, wait for IntelliJ to index the files and set up the project.
+4. Open 'index.html'
+5. Launch the page in the browser of you choice
 
 ## Technologies Used
 
-TODO
+- IntelliJ IDEA Community Edition 2022.3.2.0
+- Java Version 17
+- Postman
+- Google Chrome
+- MySQL Workbench
 
 ## Additional Tools
 
-[Animated Text Generator](https://www.textstudio.com/text-animation-generator)
+- [Notepad++](https://notepad-plus-plus.org/)
 
-[Text To ASCII](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+- [CherryTree](https://www.giuspen.net/cherrytree/)
 
-[Bootswatch](https://bootswatch.com/slate/#top)
+- [Animated Text Generator](https://www.textstudio.com/text-animation-generator)
 
-**INSPECT ELEMENT**
+- [Text To ASCII](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+
+- [Bootswatch](https://bootswatch.com/slate/#top)
+
+- **INSPECT ELEMENT**
 
 ## Screenshots
 
@@ -193,8 +223,20 @@ TODO
 >
 >While this would have been a lot of fun, sadly, it as well was cut for time.
 
+#### Fake Ads
+
+> Had it in the back of my head when I first started with the frontend, that if I was able to make the space for it I would try to work in a couple of joke 'ads' that would load in throughout the products. Came up with a few but never ended up working on them.
+>
+> My favorite was "Hot Shingles In Your Area", which would have been imposed over an image of a sunny rooftop.
+>
+> All that matters is that it makes me laugh.
+
 ## Resources
 
 [W3Schools](https://www.w3schools.com/)
 
 [Google](https://www.google.com/)
+
+## The End
+
+[Raymond](https://www.youtube.com/watch?v=Hij2q7ptNos)
